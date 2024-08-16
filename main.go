@@ -27,7 +27,8 @@ var staticFiles embed.FS
 func main() {
 	err := godotenv.Load(".env")
 	if err != nil {
-		log.Printf("warning: assuming default configuration. .env unreadable: %v", err)	}
+		log.Printf("warning: assuming default configuration. .env unreadable: %v", err)
+	}
 
 	port := os.Getenv("PORT")
 	if port == "" {
@@ -94,4 +95,8 @@ func main() {
 
 	log.Printf("Serving on port: %s\n", port)
 	log.Fatal(srv.ListenAndServe())
+}
+func unused() {
+	// this function does nothing
+	// and is called nowhere
 }
